@@ -1,10 +1,4 @@
 ﻿using awanuerTerceraEvaluacion.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace awanuerTerceraEvaluacion.Servicios
 {
@@ -49,18 +43,19 @@ namespace awanuerTerceraEvaluacion.Servicios
             string fecha = Console.ReadLine();
             string formatoFecha = "dd MM yyyy";
             DateTime FechaBien = DateTime.ParseExact(fecha, formatoFecha, provider);
-
             //Console.WriteLine(FechaBien);
             foreach (ventasDtos ventas in listaVentas)
             {
-                if (FechaBien.Equals(ventas.fechaVenta))
+                if (fecha.Equals(ventas.fechaVenta))
                 {
                     importeTotal = importeTotal + ventas.ImporteVenta;
                 }
-                Console.WriteLine("Total ventas: " + importeTotal + " euros");
-                Console.WriteLine("Tiempo transcurrido: " + ventas.fechaVenta);
-                Console.WriteLine();
+
+                
             }
+            Console.WriteLine("Total ventas: " + importeTotal + " euros");
+            Console.WriteLine("Tiempo transcurrido: " + fecha);
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -88,7 +83,7 @@ namespace awanuerTerceraEvaluacion.Servicios
                     sw.WriteLine("Instante de compra: " + ventas.fechaVenta);
                     sw.WriteLine("……….");
                     conteoVentas++;
-                    
+
                 }
             }
             Console.WriteLine("Archivo escrito");
@@ -125,7 +120,7 @@ namespace awanuerTerceraEvaluacion.Servicios
 
             foreach (pedidosDtos pedidos in listaPedidos)
             {
-                Console.WriteLine("Producto: " +  pedidos.nombreProducto);
+                Console.WriteLine("Producto: " + pedidos.nombreProducto);
                 Console.WriteLine("Cantidad: " + pedidos.cantidadProducto + " unidades");
                 Console.WriteLine("Fecha entrega: " + pedidos.fechaEntrega);
                 Console.WriteLine();

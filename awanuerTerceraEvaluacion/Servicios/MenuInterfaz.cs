@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace awanuerTerceraEvaluacion.Servicios
+﻿namespace awanuerTerceraEvaluacion.Servicios
 {
     /// <summary>
     /// Interfaz que contiene los metodos de MenuImplementacion
