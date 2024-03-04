@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace awanuerTerceraEvaluacion.Servicios
 {
@@ -56,8 +57,9 @@ namespace awanuerTerceraEvaluacion.Servicios
                 {
                     importeTotal = importeTotal + ventas.ImporteVenta;
                 }
-                Console.WriteLine("Total ventas: " + importeTotal + "euros");
+                Console.WriteLine("Total ventas: " + importeTotal + " euros");
                 Console.WriteLine("Tiempo transcurrido: " + ventas.fechaVenta);
+                Console.WriteLine();
             }
         }
 
@@ -69,7 +71,7 @@ namespace awanuerTerceraEvaluacion.Servicios
         /// <param name="listaVentas"></param>
         public void mostrarVentasDia(List<ventasDtos> listaVentas)
         {
-            Console.WriteLine("Que fecha desea saber (formato --> dd-MM-yyyy): ");
+            Console.WriteLine("Que fecha desea escribir (formato --> dd-MM-yyyy): ");
             string fecha = Console.ReadLine();
             string formatoFecha = "dd MM yyyy";
             DateTime FechaBien = DateTime.ParseExact(fecha, formatoFecha, provider);
@@ -89,6 +91,7 @@ namespace awanuerTerceraEvaluacion.Servicios
                     
                 }
             }
+            Console.WriteLine("Archivo escrito");
         }
         /// <summary>
         /// Metodo que contendra la creacion de de pedidos a los proveedores y mostrarlos por consola
